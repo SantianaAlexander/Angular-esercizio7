@@ -1,0 +1,144 @@
+@font-face {
+    font-family: Gameboy;
+    src: url("../assets/fonts/Early\ GameBoy.ttf") format("truetype");
+}
+.p1 {
+    font-family: Gameboy;
+    font-size: 16px;
+    
+}
+h1{
+    font-family: Gameboy;
+    color: #5FDD9D;
+    
+}
+.img {
+    width: 50%;
+    transition: transform .2s;
+    
+}
+.img:hover {
+    transform: scale(1.2);
+}
+.imgC {
+    width: 65%;
+    transition: transform .2s;
+}
+.imgC:hover {
+    transform: scale(1.2);
+}
+.section2 {
+    display: flex;
+    justify-content: center;
+    margin-right: 0;
+}
+.pkmn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0px;
+    padding-right: 0px;
+    
+}
+.riga1 {
+    margin-right: 0px;
+}
+.riga2 {
+    margin-right: 0px;
+}
+.riga {
+    display: flex;
+    justify-content: center;
+    margin-right: 0px;
+    
+}
+.kanto {
+    color: #D65108;
+    
+}
+.sinnoh {
+    color: #FFBA49;
+}
+.hoenn {
+    color: #6E9FCB;
+}
+.johto {
+    color:#5FDD9D;
+}
+.section3 {
+    display: flex;
+    justify-content: center;
+}
+.colBtn {
+    display: flex;
+    justify-content: center;
+}
+h3 {
+    font-family: Gameboy;
+    margin-bottom: 0px;
+}
+.btn {
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border-radius: 24px;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-size: 14px;
+  font-weight: 500;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: .25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform,opacity;
+  z-index: 0;
+}
+
+.btn:hover {
+  background: #F6F9FE;
+  color: #174ea6;
+}
+
+.btn:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+}
+
+.btn:focus {
+  outline: none;
+  border: 2px solid #DAE8AD;
+}
+
+.btn:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.btn:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+}
+
+.btn:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.btn:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+.btn:disabled {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
