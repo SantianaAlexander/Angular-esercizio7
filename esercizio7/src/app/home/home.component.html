@@ -1,36 +1,245 @@
-<div class="home" *ngIf="mostraHome">
-    <div class="container-fluid">
-        <h1 class="text-center pt-2">JOHTO:</h1>
-    </div>
-    <div class="row riga">
-        <div class="col-lg-10 col-*-12">
-            <p class="text-center p1">E' la seconda regione ad essere introdotta nella serie. Si colloca a ovest di <span class="kanto">Kanto</span>, a nord di <span class="hoenn">Hoenn</span> e a sud di <span class="sinnoh">Sinnoh</span>. <span class="johto">Johto</span> e' separata da <span class="kanto">Kanto</span> dal Monte Argento e le due regioni sono collegate naturalmente solo dall'impervio passaggio delle Cascate Tohjo.</p>
+<ng-template [ngIf]="visualizza === 'home'"> <!-- HOME -->
+    <div class="home">
+        <div class="container-fluid">
+            <h1 class="text-center pt-2">JOHTO:</h1>
         </div>
-    </div>
-    
-    <div class="section2 pt-5">
-        <div class="row riga1 pb-4">
-            <div class="col-lg-4 col-*-12 pkmn d-flex flex-column">
-                <img title="Chikorita" src="../../assets/img/Chicorita.png" class="img-fluid img pb-4">
-                <button (click)="apriChikorita($event)" class="btn" role="button" style="border: 3px solid {{colorb1}}"><h3 class="chik" style="color: {{color1}};">{{name1}}</h3></button>
-            </div>
-            <div class="col-lg-4 col-*-12 pkmn d-flex flex-column">
-                <img title="Cyndaquil" src="../../assets/img/Cyndaquil.png" class="img-fluid imgC pb-4">
-                <button (click)="apriCyndaquil($event)" class="btn" role="button" style="border: 3px solid {{colorb2}}"><h3 class="cynd" style="color: {{color2}};">{{name2}}</h3></button>
-            </div>
-            <div class="col-lg-4 col-*-12 pkmn d-flex flex-column">
-                <img title="Totodile" src="../../assets/img/Totodile.png" class="img-fluid img pb-5">
-                <button (click)="apriTotodile($event)" class="btn" role="button" style="border: 3px solid {{colorb3}}"><h3 class="totod" style="color: {{color3}};">{{name3}}</h3></button>
+        <div class="row riga">
+            <div class="col-lg-10 col-*-12">
+                <p class="text-center p1">E' la seconda regione ad essere introdotta nella serie. Si colloca a ovest di <span class="kanto">Kanto</span>, a nord di <span class="hoenn">Hoenn</span> e a sud di <span class="sinnoh">Sinnoh</span>. <span class="johto">Johto</span> e' separata da <span class="kanto">Kanto</span> dal Monte Argento e le due regioni sono collegate naturalmente solo dall'impervio passaggio delle Cascate Tohjo.</p>
             </div>
         </div>
+        <div class="section2 pt-5">
+            <div class="row riga1 pb-4">
+                <div class="col-lg-4 col-*-12 pkmn d-flex flex-column">
+                    <img title="Chikorita" src="../../assets/img/Chicorita.png" class="img-fluid img pb-4">
+                    <button (click)="apriChikorita($event)" class="btn" role="button" style="border: 3px solid {{colorb1}}"><h3 class="chik" style="color: {{color1}};">{{name1}}</h3></button>
+                </div>
+                <div class="col-lg-4 col-*-12 pkmn d-flex flex-column">
+                    <img title="Cyndaquil" src="../../assets/img/Cyndaquil.png" class="img-fluid imgC pb-4">
+                    <button (click)="apriCyndaquil($event)" class="btn" role="button" style="border: 3px solid {{colorb2}}"><h3 class="cynd" style="color: {{color2}};">{{name2}}</h3></button>
+                </div>
+                <div class="col-lg-4 col-*-12 pkmn d-flex flex-column">
+                    <img title="Totodile" src="../../assets/img/Totodile.png" class="img-fluid img pb-5">
+                    <button (click)="apriTotodile($event)" class="btn" role="button" style="border: 3px solid {{colorb3}}"><h3 class="totod" style="color: {{color3}};">{{name3}}</h3></button>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<div class="Chikorita" *ngIf="mostraChikorita">
-    <app-chikorita (tornaHome)="mostraHome = true; mostraChikorita = false"></app-chikorita>
-</div>
-<div class="Cyndaquil" *ngIf="mostraCyndaquil">
-    <app-cyndaquil></app-cyndaquil>
-</div>
-<div class="Totodile" *ngIf="mostraTotodile">
-    <app-totodile></app-totodile>
-</div>
+</ng-template>
+
+<ng-template [ngIf]="visualizza === 'chikorita'">  <!-- CHIKORITA -->
+    <div class="chikorita pt-5">
+        <div class="container-fluid section">
+            <div class="row gy-4">
+                <div class="col-lg-6 col-*-12 colon d-flex flex-column">
+                    <div class="divimg">
+                        <img [src]="imageChik" class="img-fluid imageChik">
+                    </div>
+                </div>
+                <div class="col-lg-5 col-*-12 colon d-flex flex-column">
+                    <h1>{{nomeChik}}</h1>
+                    <p>peso: {{pesoChik}}</p>
+                    <p>altezza: {{altezzaChik}}</p>
+                    <p>N nel Pokedex: {{npokedexChik}}</p>
+                    <p>{{descrizioneChik}}</p>
+                </div>
+                <div class="col-lg-1 col-*-12"></div>
+            </div>
+        </div>
+        <div class="container-fluid pt-3">
+            <div>
+                <div class="pt-3">
+                    <div class="row" style="display: flex; justify-content: center;">
+                        <div class="col-lg-2 col-*-12 divh3">
+                            <h4 class="text-center" style="font-family: Gameboy;">TIPO:</h4>
+                        </div>
+                        <div class="col-lg-2 col-*-12">
+                            <h4 class="text-center" style="font-family: Gameboy; background-color: #63BB5B; border-radius: 15px;">{{tipoChik}}</h4>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row" style="display: flex; justify-content: center;">
+                        <div class="col-lg-2 col-*-12 divh3">
+                            <h4 class="text-center" style="font-family: Gameboy;">DEBOLEZZE:</h4>
+                        </div>
+                        <div class="col-lg-2 col-*-12">
+                            <h4 class="text-center" style="font-family: Gameboy; background-color: #FF9C54; border-radius: 15px;">FUOCO</h4>
+                        </div>
+                        <div class="col-lg-2 col-*-12">
+                            <h4 class="text-center" style="font-family: Gameboy; background-color: #74CEC0; border-radius: 15px;">GHIACCIO</h4>
+                        </div>
+                        <div class="col-lg-2 col-*-12">
+                            <h4 class="text-center" style="font-family: Gameboy; background-color: #AB6AC8; border-radius: 15px;">VELENO</h4>
+                        </div>
+                        <div class="col-lg-2 col-*-12">
+                            <h4 class="text-center" style="font-family: Gameboy; background-color: #92AADE; border-radius: 15px;">VOLANTE</h4>
+                        </div>
+                        <div class="col-lg-2 col-*-12">
+                            <h4 class="text-center" style="font-family: Gameboy; background-color: #90C12C; border-radius: 15px;">COLEOTTERO</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divdivider pt-5" style="display: flex; justify-content: center;">
+            <mat-divider style="width: 80%; border: 3px solid #C80408; border-radius: 10px;"></mat-divider>
+        </div>
+        <div class="container-fluid text-center pt-4">
+            <h1>DOVE POSSO TROVARLO?</h1>
+            <div class="row pt-2 gy-4" style="display: flex; justify-content: center;">
+                <div class="col-lg-4 col-*-12">
+                    <img style="border-radius: 15px;" src="../../assets/img/chiklocation.jpg" class="img-fluid imgLoc">
+                </div>
+                <div class="col-lg-4 col-*-12" style="display: flex; align-items: center;">
+                    <p>{{doveChik}}</p>
+                </div>
+            </div>  
+        </div>
+        <div class="divbtnBack container-fluid pt-3 pb-3">
+            <button (click)="tornaHome($event)" style="background-color: #C80408;" mat-fab aria-label="Example icon button with a home icon">
+              <mat-icon>home</mat-icon>
+            </button>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template [ngIf]="visualizza === 'cyndaquil'">  <!-- CYNDAQUIL -->
+    <div class="cyndaquil pt-5">
+        <div class="container-fluid section">
+            <div class="row gy-4">
+                <div class="col-lg-6 col-*-12 colon d-flex flex-column">
+                    <div class="divimg">
+                        <img [src]="imageCynd" class="img-fluid imageCynd">
+                    </div>
+                </div>
+                <div class="col-lg-5 col-*-12 colon d-flex flex-column">
+                    <h1 style="color: #F0831E;">{{nomeCynd}}</h1>
+                    <p>peso: {{pesoCynd}}</p>
+                    <p>altezza: {{altezzaCynd}}</p>
+                    <p>N nel Pokedex: {{npokedexCynd}}</p>
+                    <p>{{descrizioneCynd}}</p>
+                </div>
+                <div class="col-lg-1 col-*-12"></div>
+            </div>
+        </div>
+        <div class="container-fluid pt-3">
+            <div>
+                <div class="pt-3">
+                    <div class="row" style="display: flex; justify-content: center;">
+                        <div class="col-lg-2 col-*-12 divh3">
+                            <h4 class="text-center" style="font-family: Gameboy;">TIPO:</h4>
+                        </div>
+                        <div class="col-lg-3 col-*-12">
+                            <h4 class="text-center" style="font-family: Gameboy; background-color: #FF9C54; border-radius: 15px;">{{tipoCynd}}</h4>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row" style="display: flex; justify-content: center;">
+                        <div class="col-lg-2 col-*-12 divh3">
+                            <h4 class="text-center" style="font-family: Gameboy;">DEBOLEZZE:</h4>
+                        </div>
+                        <div class="col-lg-3 col-*-12">
+                            <h4 class="text-center" style="font-family: Gameboy; background-color: #4D90D5; border-radius: 15px;">ACQUA</h4>
+                        </div>
+                        <div class="col-lg-3 col-*-12">
+                            <h4 class="text-center" style="font-family: Gameboy; background-color: #D97746; border-radius: 15px;">TERRA</h4>
+                        </div>
+                        <div class="col-lg-3 col-*-12">
+                            <h4 class="text-center" style="font-family: Gameboy; background-color: #C7B78B; border-radius: 15px;">ROCCIA</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divdivider pt-5" style="display: flex; justify-content: center;">
+            <mat-divider style="width: 80%; border: 3px solid #007F86; border-radius: 10px;"></mat-divider>
+        </div>
+        <div class="container-fluid text-center pt-4">
+            <h1 style="color: #F0831E;">DOVE POSSO TROVARLO?</h1>
+            <div class="row pt-2 gy-4" style="display: flex; justify-content: center;">
+                <div class="col-lg-4 col-*-12">
+                    <img style="border-radius: 15px; width: 75%;" src="../../assets/img/doveCynd.png" class="img-fluid imgLoc">
+                </div>
+                <div class="col-lg-4 col-*-12" style="display: flex; align-items: center;">
+                    <p>{{doveCynd}}</p>
+                </div>
+            </div>  
+        </div>
+        <div class="divbtnBack container-fluid pt-3 pb-3">
+            <button (click)="tornaHome($event)" style="background-color: #C80408;" mat-fab aria-label="Example icon button with a home icon">
+              <mat-icon>home</mat-icon>
+            </button>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template [ngIf]="visualizza === 'totodile'">  <!-- TOTODILE -->
+    <div class="totodile pt-5">
+        <div class="container-fluid section">
+            <div class="row gy-4">
+                <div class="col-lg-6 col-*-12 colon d-flex flex-column">
+                    <div class="divimg">
+                        <img [src]="imageToto" class="img-fluid imageToto">
+                    </div>
+                </div>
+                <div class="col-lg-5 col-*-12 colon d-flex flex-column">
+                    <h1 style="color: #59C2E1;">{{nomeToto}}</h1>
+                    <p>peso: {{pesoToto}}</p>
+                    <p>altezza: {{altezzaToto}}</p>
+                    <p>N nel Pokedex: {{npokedexToto}}</p>
+                    <p>{{descrizioneToto}}</p>
+                </div>
+                <div class="col-lg-1 col-*-12"></div>
+            </div>
+        </div>
+        <div class="container-fluid pt-3">
+            <div>
+                <div class="pt-3">
+                    <div class="row" style="display: flex; justify-content: center;">
+                        <div class="col-lg-2 col-*-12 divh3">
+                            <h4 class="text-center" style="font-family: Gameboy;">TIPO:</h4>
+                        </div>
+                        <div class="col-lg-4 col-*-12">
+                            <h4 class="text-center" style="font-family: Gameboy; background-color: #4D90D5; border-radius: 15px;">{{tipoToto}}</h4>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row" style="display: flex; justify-content: center;">
+                        <div class="col-lg-2 col-*-12 divh3">
+                            <h4 class="text-center" style="font-family: Gameboy;">DEBOLEZZE:</h4>
+                        </div>
+                        <div class="col-lg-4 col-*-12">
+                            <h4 class="text-center" style="font-family: Gameboy; background-color: #63BB5B; border-radius: 15px;">ERBA</h4>
+                        </div>
+                        <div class="col-lg-4 col-*-12">
+                            <h4 class="text-center" style="font-family: Gameboy; background-color: #F3D23B; border-radius: 15px;">ELETTRO</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divdivider pt-5" style="display: flex; justify-content: center;">
+            <mat-divider style="width: 80%; border: 3px solid #ED8599; border-radius: 10px;"></mat-divider>
+        </div>
+        <div class="container-fluid text-center pt-4">
+            <h1 style="color: #59C2E1;">DOVE POSSO TROVARLO?</h1>
+            <div class="row pt-2 gy-4" style="display: flex; justify-content: center;">
+                <div class="col-lg-4 col-*-12">
+                    <img style="border-radius: 15px; width: 75%;" src="../../assets/img/doveToto.png" class="img-fluid imgLoc">
+                </div>
+                <div class="col-lg-4 col-*-12" style="display: flex; align-items: center;">
+                    <p>{{doveToto}}</p>
+                </div>
+            </div>  
+        </div>
+        <div class="divbtnBack container-fluid pt-3 pb-3">
+            <button (click)="tornaHome($event)" style="background-color: #C80408;" mat-fab aria-label="Example icon button with a home icon">
+              <mat-icon>home</mat-icon>
+            </button>
+        </div>
+    </div>
+</ng-template>
+

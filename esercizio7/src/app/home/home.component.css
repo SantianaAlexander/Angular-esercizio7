@@ -2,10 +2,12 @@
     font-family: Gameboy;
     src: url("../../assets/fonts/Early\ GameBoy.ttf") format("truetype");
 }
+
+/* HOME CSS */
+
 .p1 {
     font-family: Gameboy;
     font-size: 16px;
-    
 }
 h1{
     font-family: Gameboy;
@@ -141,4 +143,62 @@ h3 {
 
 .btn:disabled {
   box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+/* CHIKORITA CSS */
+
+h1 {
+    font-family: Gameboy;
+    color: #6EBC54;
+}
+p {
+    font-family: Gameboy;
+}
+.imageChik {
+    width: 40%;
+    transition: transform .2s;
+}
+.imageChik:hover {
+    transform: scale(1.2);
+}
+.divimg {
+    display: flex;
+    justify-content: center;
+}
+.section {
+    display: flex;
+    justify-content: center;
+}
+.colon {
+    display: flex;
+    justify-content: center;
+}
+.cardTipo {
+    background-color: #63BB5B;
+    font-family: Gameboy;
+}
+.cardDebolezze {
+    background-color: #63BB5B;
+    font-family: Gameboy;
+}
+.imgLoc {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+/* CYNDAQUIL CSS */
+.imageCynd {
+    width: 50%;
+    transition: transform .2s;
+}
+.imageCynd:hover {
+    transform: scale(1.2);
+}
+
+/* TOTODILE CSS */
+.imageToto {
+    width: 35%;
+    transition: transform .2s;
+}
+.imageToto:hover {
+    transform: scale(1.2);
 }
